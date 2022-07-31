@@ -1,0 +1,30 @@
+.suggestion {
+  background: rgb(245, 245, 250);
+  margin-top: 16px;
+  border-radius: 4px;
+
+  &__title {
+
+  }
+  &__product {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    background: white;
+    padding: 0px 0px 16px;
+    border-radius: 0px 0px 4px 4px;
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      align-self: stretch;
+      background-color: rgb(255, 255, 255);
+      border-top: 1px solid rgb(242, 242, 242);
+
+      * {
+        width: 16.6667%;
+      }
+    }
+  }
+}
