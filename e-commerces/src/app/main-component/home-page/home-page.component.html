@@ -1,15 +1,85 @@
-<div class="cm-width">
-  <div class="suggestion">
-    <div class="suggestion__title">
-
-    </div>
-    <div class="suggestion__product">
-      <div class="content">
-        <div *ngFor="let item of [].constructor(20)">
-          <app-product-item></app-product-item>
+<main class="w-100">
+  <div class="cm-width">
+    <div class="suggestion">
+      <div class="suggestion__title" style="position: sticky;top: 0px;z-index: 998;">
+          <h2 style="height: 48px;">Gợi Ý Hôm Nay</h2>
+          <div class="suggestion__title-list">
+              <div class="tab" (click)="changeTab(1)" [ngClass]="{'active': tab_suggest.for_you}">
+                  <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/f9/27/b5/3a8e2286a1c8fb91b67acc5ee35f82f0.png">
+                  <div class="tab-text fs-13">Dành cho bạn</div>
+              </div>
+              <div class="tab" (click)="changeTab(2)" [ngClass]="{'active': tab_suggest.coupon}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/tikimsp/14/7b/d9/72d4b0ba52b75a09051aa6da36461bf0.png">
+                <div class="tab-text fs-13">Coupon 10 Triệu</div>
+              </div>
+              <div class="tab" (click)="changeTab(3)" [ngClass]="{'active': tab_suggest.sale}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/b7/aa/f3/bcff08097ead36826d2c9daf7c2debd5.png">
+                <div class="tab-text fs-13">Đi Chợ Siêu Sale</div>
+              </div>
+              <div class="tab" (click)="changeTab(4)" [ngClass]="{'active': tab_suggest.deal_hot}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/41/99/9a/8898607d7fca4b79775a708c57a8152f.png">
+                <div class="tab-text fs-13">Deal Siêu Hot</div>
+              </div>
+              <div class="tab" (click)="changeTab(5)" [ngClass]="{'active': tab_suggest.cheap}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/0f/59/9d/215fa18ef72e430eefcbfe5355cab8e2.png">
+                <div class="tab-text fs-13">Rẻ vô đối</div>
+              </div>
+              <div class="tab" (click)="changeTab(6)" [ngClass]="{'active': tab_suggest.new}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/7d/8a/6e/d8b76e2c43cbd06b7e1aa3ab8c54df64.png">
+                <div class="tab-text fs-13">Hàng mới</div>
+              </div>
+              <div class="tab" (click)="changeTab(7)" [ngClass]="{'active': tab_suggest.fashion}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/dc/f1/b1/6ba9e529785de3ad1a81b9c569d05aa0.png">
+                <div class="tab-text fs-13">Xu hướng thời trang</div>
+              </div>
+              <div class="tab" (click)="changeTab(8)" [ngClass]="{'active': tab_suggest.trending}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/b9/e1/a9/65ad8ac4e167c5009ae3f7c80395a5a4.png">
+                <div class="tab-text fs-13">Trending</div>
+              </div>
+          </div>
+      </div>
+          <!-- <h2 class="header-title" style="height: 48px;">Gợi Ý Hôm Nay</h2>
+          <div class="suggestion-list">
+              <div class="tab" (click)="changeTab(1)" [ngClass]="{'active': tab_suggest.for_you}">
+                  <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/f9/27/b5/3a8e2286a1c8fb91b67acc5ee35f82f0.png">
+                  <div class="tab-text fs-13">Dành cho bạn</div>
+              </div>
+              <div class="tab" (click)="changeTab(2)" [ngClass]="{'active': tab_suggest.coupon}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/tikimsp/14/7b/d9/72d4b0ba52b75a09051aa6da36461bf0.png">
+                <div class="tab-text fs-13">Coupon 10 Triệu</div>
+              </div>
+              <div class="tab" (click)="changeTab(3)" [ngClass]="{'active': tab_suggest.sale}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/b7/aa/f3/bcff08097ead36826d2c9daf7c2debd5.png">
+                <div class="tab-text fs-13">Đi Chợ Siêu Sale</div>
+              </div>
+              <div class="tab" (click)="changeTab(4)" [ngClass]="{'active': tab_suggest.deal_hot}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/41/99/9a/8898607d7fca4b79775a708c57a8152f.png">
+                <div class="tab-text fs-13">Deal Siêu Hot</div>
+              </div>
+              <div class="tab" (click)="changeTab(5)" [ngClass]="{'active': tab_suggest.cheap}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/0f/59/9d/215fa18ef72e430eefcbfe5355cab8e2.png">
+                <div class="tab-text fs-13">Rẻ vô đối</div>
+              </div>
+              <div class="tab" (click)="changeTab(6)" [ngClass]="{'active': tab_suggest.new}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/7d/8a/6e/d8b76e2c43cbd06b7e1aa3ab8c54df64.png">
+                <div class="tab-text fs-13">Hàng mới</div>
+              </div>
+              <div class="tab" (click)="changeTab(7)" [ngClass]="{'active': tab_suggest.fashion}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/dc/f1/b1/6ba9e529785de3ad1a81b9c569d05aa0.png">
+                <div class="tab-text fs-13">Xu hướng thời trang</div>
+              </div>
+              <div class="tab" (click)="changeTab(8)" [ngClass]="{'active': tab_suggest.trending}">
+                <img width="48" alt="" src="https://salt.tikicdn.com/ts/personalish/b9/e1/a9/65ad8ac4e167c5009ae3f7c80395a5a4.png">
+                <div class="tab-text fs-13">Trending</div>
+              </div>
+          </div> -->
+      <div class="suggestion__product">
+        <div class="content">
+          <div *ngFor="let item of [].constructor(50)">
+            <app-product-item></app-product-item>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
-</div>
+</main>

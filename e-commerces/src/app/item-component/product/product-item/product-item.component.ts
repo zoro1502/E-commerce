@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
 
+  has_discount = true;
   constructor() { }
 
   ngOnInit(): void {

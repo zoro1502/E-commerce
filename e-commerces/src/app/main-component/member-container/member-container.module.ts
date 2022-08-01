@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MemberContainerComponent } from './member-container.component';
 import { SharedModule } from '../../shared/shared.module';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
     path: "",
     component: MemberContainerComponent,
     children: [
-
       {
         path:'home',
         loadChildren: () =>
@@ -23,7 +23,9 @@ const routes: Routes = [
   declarations: [MemberContainerComponent],
   imports: [
     CommonModule,
-    SharedModule
+    RouterModule.forChild(routes),
+    SharedModule,
+    NgbModule
   ]
 })
 export class MemberContainerModule { }
